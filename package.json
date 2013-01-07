@@ -1,0 +1,15 @@
+{
+  "name": "chai-things",
+  "version": "0.0.1",
+  "author": "Ruben Verborgh <ruben.verborgh@gmail.com> (http://ruben.verborgh.org/)",
+  "scripts": {
+    "hint": "./node_modules/jshint/bin/hint lib",
+    "test": "./node_modules/mocha/bin/mocha"
+  },
+  "devDependencies": {
+    "chai": "1.4.x",
+    "coffee-script": "1.4.x",
+    "mocha": "1.7.x",
+    "jshint": "0.9.x"
+  }
+}
