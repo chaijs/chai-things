@@ -1,3 +1,5 @@
+# This file describes the behavior of the `something` property
+
 describe "using something", ->
 
   describe "without include", ->
@@ -106,6 +108,17 @@ describe "the array [{ a: 1 }, { b: 2 }]", ->
   it "does not *not* include something that deep equals { b: 2 }", ->
     (() -> array.should.not.include.something.that.deep.equals { b: 2 }).
       should.throw "expected no element of [ { a: 1 }, { b: 2 } ] to deeply equal { b: 2 }"
+
+  it "should include something with a property b of 2", ->
+    array.should.include.something.with.property('b', 2)
+
+  it "does not include something with a property b of 3", ->
+    (() -> array.should.include.something.with.property('b', 3)).
+      should.throw "expected an element of [ { a: 1 }, { b: 2 } ]" +
+                   " to have a property 'b' of 3, but got 2"
+
+  it "should not include something with a property b of 3", ->
+    array.should.not.include.something.with.property('b', 3)
 
 
 describe "the array [{ a: 1 }, { a: 1 }]", ->
