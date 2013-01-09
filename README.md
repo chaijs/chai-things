@@ -5,13 +5,13 @@ Chai Things adds support to [Chai](http://chaijs.com/) for assertions on array e
 Use the `something` property on an array to test whether the assertion holds for one of its elements.
 
 ```javascript
-// Although they are equal, two different { a: 1 } objects are not the same
-[{ a: 1 }, { b: 2 }].should.not.include({ a: 1 })
+// Although they are equal, two different { a: 'cat' } objects are not the same
+[{ a: 'cat' }, { a: 'dog' }].should.not.include({ a: 'cat' })
 // Chai Things allows us to test deep equality on one of the elements
-[{ a: 1 }, { b: 2 }].should.include.something.that.deep.equals({ b: 2 })
+[{ a: 'cat' }, { a: 'dog' }].should.include.something.that.deep.equals({ a: 'cat' })
 // If the test fails, we get a descriptive message
-[{ a: 1 }, { b: 2 }].should.include.something.that.deep.equals({ c: 3 })
-/* expected an element of [ { a: 1 }, { b: 2 } ] to deeply equal { c: 3 } */
+[{ a: 'cat' }, { a: 'dog' }].should.include.something.that.deep.equals({ a: 'cow' })
+/* expected an element of [ { a: 'cat' }, { a: 'dog' } ] to deeply equal { a: 'cow' } */
 ```
 
 You are free to choose the syntactic variant you like most:
