@@ -7,11 +7,6 @@ describe "using something", ->
       (() -> [].should.something.that.deep.equals 1).
         should.throw "cannot use something without include or contains"
 
-  describe "when something has already been used", ->
-    it "should throw an error", ->
-      (() -> [].should.include.something.that.something).
-        should.throw "cannot use something twice in an assertion"
-
 
 describe "using something()", ->
 
@@ -130,6 +125,20 @@ describe "the array [{ a: 1 }, { a: 1 }]", ->
   it "does not *not* include something that deep equals { a: 1 }", ->
     (() -> array.should.not.include.something.that.deep.equals { a: 1 }).
       should.throw "expected no element of [ { a: 1 }, { a: 1 } ] to deeply equal { a: 1 }"
+
+
+describe "the array [[{ a: 1 }, { a: 1 }]]", ->
+  array = [[{ a: 1 }, { a: 1 }]]
+
+  it "should include something that includes something that deep equals { a: 1 }", ->
+    array.should.include.something.that.includes.something.that.deep.equals { a: 1 }
+
+  it "should not include something that not deep equals { a: 1 }", ->
+    array.should.not.include.something.that.includes.something.that.not.deep.equals { a: 1 }
+
+  it "does not *not* include something that deep equals { a: 1 }", ->
+    (() -> array.should.not.include.something.that.includes.something.that.deep.equals { a: 1 }).
+      should.throw "expected no element of [ [ { a: 1 }, { a: 1 } ] ] to satisfy the assertion"
 
 
 describe "the string 'abcde'", ->
