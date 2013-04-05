@@ -1,6 +1,6 @@
 {
   "name": "chai-things",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "author": "Ruben Verborgh <ruben.verborgh@gmail.com> (http://ruben.verborgh.org/)",
   "main": "./lib/chai-things.js",
   "license": "MIT",
