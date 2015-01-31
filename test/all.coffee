@@ -67,6 +67,7 @@ describe "the array [1, 1]'s elements", ->
     (() -> array.should.not.all.not.equal 2).
       should.throw "expected not all elements of [ 1, 1 ] to not equal 2"
 
+
 describe "the array [1, 2]'s elements", ->
   array = [1, 2]
 
@@ -97,3 +98,21 @@ describe "the array [1, 2]'s elements", ->
   it "do not all not equal 2", ->
     (() -> array.should.all.not.equal 2).
       should.throw "expected all elements of [ 1, 2 ] to not equal 2"
+
+
+describe "the array [{ a: 'b' }, { a: 'c' }]'s elements", ->
+  array = [{ a: 'b' }, { a: 'c' }]
+
+  it "should all have property 'a'", ->
+    array.should.all.have.property("a")
+
+  it "should not all have property 'b'", ->
+    (() -> array.should.all.have.property("b")).
+      should.throw "expected all elements of [ { a: 'b' }, { a: 'c' } ] to have a property 'b'"
+
+  it "should all have property 'a' not equal 'd'", ->
+    array.should.all.have.property("a").not.equal("d")
+
+  it.skip "should not all have property 'a' not equal 'c'", ->
+    (() -> array.should.all.have.property("a").not.equal("c")).
+      should.throw "expected all elements of [ { a: 'b' }, { a: 'c' } ] to satisfy the assertion"

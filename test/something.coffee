@@ -141,6 +141,24 @@ describe "the array [[{ a: 1 }, { a: 1 }]]", ->
       should.throw "expected no element of [ [ { a: 1 }, { a: 1 } ] ] to satisfy the assertion"
 
 
+describe "the array [{ a: 'b' }, { a: 'b' }]", ->
+  array = [{ a: 'b' }, { a: 'b' }]
+
+  it "should include something with property 'a'", ->
+    array.should.include.something.that.have.property("a")
+
+  it "should not include something with property 'b'", ->
+    (() -> array.should.include.something.that.have.property("b")).
+      should.throw "expected an element of [ { a: 'b' }, { a: 'b' } ] to have a property 'b'"
+
+  it "should include something with a property 'a' not equal 'd'", ->
+    array.should.include.something.that.have.property("a").not.equal("d")
+
+  it.skip "should not include something that has property 'a' not equal 'b'", ->
+    (() -> array.should.include.something.that.have.property("a").not.equal("b")).
+      should.throw "expected an element of [ { a: 'b' }, { a: 'b' } ] to satisfy the assertion"
+
+
 describe "the string 'abcde'", ->
   string = 'abcde'
 
