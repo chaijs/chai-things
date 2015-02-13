@@ -54,3 +54,7 @@ var chai = require("chai");
 chai.should();
 chai.use(require('chai-things'));
 ```
+
+## Known issues
+Because of how Chai works internally, it is not possible to combine Chai Things in certain ways.
+(See [#4](https://github.com/RubenVerborgh/Chai-Things/issues/4) and [#9](https://github.com/RubenVerborgh/Chai-Things/issues/9).)
