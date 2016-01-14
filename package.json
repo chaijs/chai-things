@@ -22,6 +22,6 @@
     "chai": "1.4.x",
     "coffee-script": "1.4.x",
     "mocha": "1.7.x",
-    "jshint": "0.9.x"
+    "jshint": "2.9.1"
   }
 }
