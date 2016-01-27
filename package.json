@@ -21,7 +21,7 @@
   "devDependencies": {
     "chai": "1.4.x",
     "coffee-script": "1.4.x",
-    "mocha": "1.7.x",
+    "mocha": "2.4.2",
     "jshint": "0.9.x"
   }
 }
