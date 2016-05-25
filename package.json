@@ -2,7 +2,13 @@
   "name": "chai-things",
   "version": "0.2.0",
   "author": "Ruben Verborgh <ruben.verborgh@gmail.com> (http://ruben.verborgh.org/)",
-  "keywords": ["chai", "chai-plugin", "browser", "array", "things"],
+  "keywords": [
+    "chai",
+    "chai-plugin",
+    "browser",
+    "array",
+    "things"
+  ],
   "main": "./lib/chai-things.js",
   "license": "MIT",
   "repository": {
@@ -22,7 +28,7 @@
   "devDependencies": {
     "chai": "1.4.x",
     "coffee-script": "1.4.x",
-    "mocha": "1.7.x",
+    "mocha": "2.5.3",
     "jshint": "0.9.x"
   }
 }
