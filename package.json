@@ -20,9 +20,9 @@
     "test": "./node_modules/mocha/bin/mocha"
   },
   "devDependencies": {
-    "chai": "1.4.x",
-    "coffee-script": "1.4.x",
-    "mocha": "1.7.x",
-    "jshint": "0.9.x"
+    "chai": "~3.5.0",
+    "coffee-script": "~1.11.1",
+    "mocha": "~3.1.2",
+    "jshint": "~2.9.4"
   }
 }
